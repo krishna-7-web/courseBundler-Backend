@@ -60,8 +60,8 @@ const logout = catchAsyncError((req, res, next) => {
     .cookie("token", null, {
       expires: new Date(Date.now()),
       httpOnly: true,
-      secure: true,
-      sameSite: "none",
+      secure: true, // Secure only in production
+      sameSite: "none", // Ensure cross-site cookies are allowed
     })
     .json({
       success: true,
