@@ -1,13 +1,7 @@
 import { catchAsyncError } from "../middlewares/catchAsyncErrors.js";
-import ErrorHandler from "../utils/errorHandler.js";
-import { User } from "../models/User.js";
-import { Course } from "../models/Course.js";
-import { sendToken } from "../utils/sendToken.js";
-import { sendEmail } from "../utils/sendEmail.js";
-import crypto from "crypto";
-import { uplaodFilesToCloudinary } from "../utils/features.js";
-import cloudinary from "cloudinary";
 import { Stats } from "../models/Stats.js";
+import ErrorHandler from "../utils/errorHandler.js";
+import { sendEmail } from "../utils/sendEmail.js";
 
 const contact = catchAsyncError(async (req, res, next) => {
   const { name, email, message } = req.body;

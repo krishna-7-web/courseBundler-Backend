@@ -29,6 +29,10 @@ const getAllCourses = catchAsyncError(async (req, res, next) => {
 const createCourse = catchAsyncError(async (req, res, next) => {
   const { title, description, category, createdBy } = req.body;
 
+  const course = await Course.find({ title, description });
+
+  if (course) return next(new ErrorHandler("Course Already Exist", 401));
+
   const file = req.file;
 
   if (!file) return next(new ErrorHandler("Please Upload File", 401));

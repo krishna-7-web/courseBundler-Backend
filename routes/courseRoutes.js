@@ -20,7 +20,7 @@ import {
 const router = express.Router();
 
 // Get All Courses without Admin
-router.route("/courses").get(isAuthenticated, getAllCourses);
+router.route("/courses").get(getAllCourses);
 
 // Create new Course - only Admin
 router
