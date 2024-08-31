@@ -81,7 +81,7 @@ const cancelSubscription = catchAsyncError(async (req, res, next) => {
   instance.subscriptions.cancel(subscriptioId);
 
   const payment = await Payment.findOne({
-    razrazorpay_subscription_id: subscriptioId,
+    razorpay_subscription_id: subscriptioId,
   });
 
   const gap = Date.now() - payment.createdAt;
