@@ -184,7 +184,7 @@ Course.watch().on("change", async () => {
   stats[0].views = totalViews;
   stats[0].createdAt = new Date(Date.now());
 
-  await course[0].save();
+  await stats[0].save();
 });
 
 export {

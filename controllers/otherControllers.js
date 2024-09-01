@@ -41,7 +41,6 @@ const courseRequest = catchAsyncError(async (req, res, next) => {
 
 const getDashboardStats = catchAsyncError(async (req, res, next) => {
   const stats = await Stats.find({}).sort({ createdAt: "desc" }).limit(12);
-  console.count("hello");
 
   const statsData = [];
 
