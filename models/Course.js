@@ -49,12 +49,12 @@ const schema = new mongoose.Schema({
   },
 
   views: {
-    type: String,
+    type: Number,
     default: 0,
   },
 
   numOfVideos: {
-    type: String,
+    type: Number,
     default: 0,
   },
 
