@@ -9,10 +9,10 @@ import { authorizedAdmin, isAuthenticated } from "../middlewares/auth.js";
 const router = express.Router();
 
 // Contact Form
-router.route("/contact").post(contact);
+router.route("/contact").post(isAuthenticated, contact);
 
 // Courese Request Form
-router.route("/courserequest").post(courseRequest);
+router.route("/courserequest").post(isAuthenticated, courseRequest);
 
 // Admin Dashboard Stats
 router
