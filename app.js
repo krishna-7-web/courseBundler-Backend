@@ -17,7 +17,7 @@ app.use(cookieParser()); // Place before routes to populate req.cookies
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: [process.env.FRONTEND_URL, "http://localhost:5174"],
     credentials: true, // Allow credentials (cookies) to be sent
     methods: ["GET", "POST", "PUT", "DELETE"],
   })

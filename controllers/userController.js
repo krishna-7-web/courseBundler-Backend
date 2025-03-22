@@ -32,6 +32,7 @@ const register = catchAsyncError(async (req, res, next) => {
       url: result[0].url,
     },
   });
+  console.log(user);
 
   sendToken(res, user, "Registered Successfully", 201);
 });
